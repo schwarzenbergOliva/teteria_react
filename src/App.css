@@ -1,0 +1,161 @@
+:root {
+    --base-color: #e3ebd4;
+    --primary-color: #8b9475;
+    --accent-color: #5c6346;
+    --light-color: #f4f7ed;
+    --dark-color: #2c3021;
+}
+
+body {
+    background-color: var(--base-color) !important;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 5px !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.card {
+    background-color: var(--light-color);
+    border: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.card-icon {
+    color: var(--accent-color);
+}
+
+footer {
+    background: var(--dark-color) !important;
+}
+
+footer .text-warning {
+    color: var(--base-color) !important;
+}
+
+footer a.text-white:hover {
+    color: var(--base-color) !important;
+    text-decoration: underline !important;
+}
+
+footer .btn-outline-light:hover {
+    background-color: var(--base-color);
+    color: var(--dark-color);
+}
+
+footer hr {
+    background-color: var(--base-color);
+    opacity: 0.2;
+}
+
+footer .fab {
+    transition: transform 0.3s ease;
+}
+
+footer .fab:hover {
+    transform: translateY(-3px);
+}
+
+h1{
+    border-style: outset;
+    border-width: 5px;
+    border-color: rgb(255, 255, 255);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 40%;
+    padding-right: 1rem;
+    color: rgb(32, 231, 72);
+}
+
+.mab-1{
+    margin-bottom: 0.5rem;
+}
+.mab-2{
+    margin-bottom: 1rem;
+}
+.mab-3{
+    margin-bottom: 1.5rem;
+}
+.mab-4{
+    margin-bottom: 2rem;
+}
+.mab-5{
+    margin-bottom: 2.5rem;
+}
+.mar-1{
+    margin-top: 0.5rem;
+}
+.mar-2{
+    margin-top: 1rem;
+}
+.mar-3{
+    margin-top: 1.5rem;
+}
+.mar-4{
+    margin-top: 2rem;
+}
+.mar-5{
+    margin-top: 2.5rem;
+}
+
+form{
+    display: grid;
+    max-width: 400px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.texto-rojo{
+    color: rgb(255, 60, 60);
+}
+.texto-verde{
+    color: green;
+}
+.texto-azul{
+    color: blue;
+}
+
+    body{
+        background-color: rgb(185, 185, 185) !important;
+    }
+
+
+
+.btnVerde{
+    background-color: green;
+    color: aqua;
+}
