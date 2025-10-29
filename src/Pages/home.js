@@ -6,7 +6,6 @@ export default function Home() {
     return (
         <>
             <Navbar />
-
             <div id="carouselExampleAutoplaying" className="carousel slide mb-5" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
