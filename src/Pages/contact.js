@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/global.css';
 const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+
+        // Obtener valores del formulario
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
         if (!name || !email || !message) {
             alert('Por favor, complete todos los campos.');
             return;
         }
 
-        // Validación de correo
+        // Validación de correo simple
         const atIndex = email.indexOf('@');
         const dotIndex = email.lastIndexOf('.');
         if (atIndex < 1 || dotIndex < atIndex + 2 || dotIndex === email.length - 1) {
@@ -22,9 +24,49 @@ const Contact = () => {
             return;
         }
 
-        alert('Mensaje enviado. Gracias por contactarnos.');
-        e.target.reset();
+        // Preparar payload usando variables de entorno comentadas
+        const payload = {
+            service_id: process.env.REACT_APP_API_EMAILJS_SERVICE_ID,
+            template_id: process.env.REACT_APP_API_EMAILJS_TEMPLATE_ID,
+            user_id: process.env.REACT_APP_API_EMAILJS_USER_ID,
+            accessToken: process.env.REACT_APP_API_EMAILJS_ACCESS_TOKEN,
+            template_params: {
+                name,
+                time: new Date().toLocaleString().replace(/\//g, '-'),
+                message,
+                email
+            }
+        };
+
+        // Endpoint EmailJS (por defecto)
+        const endpoint = process.env.REACT_APP_API_EMAILJS_ENDPOINT || 'https://api.emailjs.com/api/v1.0/email/send';
+
+        setSending(true);
+
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+            .then((res) => {
+                if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
+                return res.text();
+            })
+            .then((text) => {
+                alert('Mensaje enviado. Gracias por contactarnos.');
+                e.target.reset();
+            })
+            .catch((err) => {
+                console.error('Error enviando mensaje:', err);
+                alert('Ocurrió un error al enviar el mensaje. Intenta nuevamente.');
+                console.log(JSON.stringify(payload));
+            })
+            .finally(() => setSending(false));
     };
+
+    const [sending, setSending] = useState(false);
 
     return (
         <>
@@ -46,7 +88,16 @@ const Contact = () => {
                                 <label htmlFor="message" className="form-label">Mensaje</label>
                                 <textarea className="form-control" id="message" rows="5" required></textarea>
                             </div>
-                            <button type="submit" className="mt-2 btn btn-primary">Enviar Mensaje</button>
+                            <button type="submit" className="mt-2 btn btn-primary" disabled={sending}>
+                                {sending ? (
+                                    <>
+                                        <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                        Enviando...
+                                    </>
+                                ) : (
+                                    'Enviar Mensaje'
+                                )}
+                            </button>
                         </form>
                     </div>
                     <div className="col-md-6">
@@ -64,6 +115,34 @@ const Contact = () => {
                 </div>
             </div>
             <Footer />
+
+            {/* Overlay simple que aparece mientras se envía el formulario */}
+            {sending && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0,0,0,0.4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 2000
+                }}>
+                    <div style={{
+                        background: '#111',
+                        color: '#fff',
+                        padding: '16px 24px',
+                        borderRadius: 8,
+                        display: 'flex',
+                        alignItems: 'center'
+                    }}>
+                        <div className="spinner-border text-light me-2" role="status" aria-hidden="true"></div>
+                        <div>Enviando...</div>
+                    </div>
+                </div>
+            )}
         </>
     );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -12,24 +13,24 @@ const Footer = () => {
                     <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Productos</h5>
                         <p>
-                            <a href="#" className="text-white" style={{ textDecoration: 'none' }}>
+                            <Link to="/" className="text-white" style={{ textDecoration: 'none' }}>
                                 Té Negro
-                            </a>
+                            </Link>
                         </p>
                         <p>
-                            <a href="#" className="text-white" style={{ textDecoration: 'none' }}>
+                            <Link to="/" className="text-white" style={{ textDecoration: 'none' }}>
                                 Té Verde
-                            </a>
+                            </Link>
                         </p>
                         <p>
-                            <a href="#" className="text-white" style={{ textDecoration: 'none' }}>
+                            <Link to="/" className="text-white" style={{ textDecoration: 'none' }}>
                                 Té Chai
-                            </a>
+                            </Link>
                         </p>
                         <p>
-                            <a href="#" className="text-white" style={{ textDecoration: 'none' }}>
+                            <Link to="/" className="text-white" style={{ textDecoration: 'none' }}>
                                 Infusiones
-                            </a>
+                            </Link>
                         </p>
                     </div>
                     <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -46,15 +47,15 @@ const Footer = () => {
                     </div>
                     <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Síguenos</h5>
-                        <a href="#" className="btn btn-outline-light btn-floating m-1">
+                        <Link to="/" className="btn btn-outline-light btn-floating m-1">
                             <i className="fab fa-facebook-f" />
-                        </a>
-                        <a href="#" className="btn btn-outline-light btn-floating m-1">
+                        </Link>
+                        <Link to="/" className="btn btn-outline-light btn-floating m-1">
                             <i className="fab fa-twitter" />
-                        </a>
-                        <a href="#" className="btn btn-outline-light btn-floating m-1">
+                        </Link>
+                        <Link to="/" className="btn btn-outline-light btn-floating m-1">
                             <i className="fab fa-instagram" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <hr className="mb-4" />
@@ -62,28 +63,28 @@ const Footer = () => {
                     <div className="col-md-7 col-lg-8">
                         <p>
                             Copyright ©2025 Todos los derechos reservados por:
-                            <a href="#" style={{ textDecoration: 'none' }}>
+                            <Link to="/" style={{ textDecoration: 'none' }}>
                                 <strong className="text-warning"> La hora del té spa</strong>
-                            </a>
+                            </Link>
                         </p>
                     </div>
                     <div className="col-md-5 col-lg-4">
                         <div className="text-center text-md-end">
                             <ul className="list-unstyled list-inline">
                                 <li className="list-inline-item">
-                                    <a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: 23 }}>
+                                    <Link to="/" className="btn-floating btn-sm text-white" style={{ fontSize: 23 }}>
                                         <i className="fab fa-cc-visa" />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: 23 }}>
+                                    <Link to="/" className="btn-floating btn-sm text-white" style={{ fontSize: 23 }}>
                                         <i className="fab fa-cc-mastercard" />
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="#" className="btn-floating btn-sm text-white" style={{ fontSize: 23 }}>
+                                    <Link to="/" className="btn-floating btn-sm text-white" style={{ fontSize: 23 }}>
                                         <i className="fab fa-cc-paypal" />
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

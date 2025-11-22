@@ -29,6 +29,39 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## Variables de entorno
+
+Esta aplicación utiliza variables de entorno para configurar endpoints y credenciales necesarias en tiempo de ejecución. Para facilitar la configuración existe el archivo `.env.example` en la raíz del proyecto. Crea un archivo `.env` (no lo subas al repositorio) con los valores adecuados.
+
+Variables esperadas (definidas en `.env.example`):
+
+- `REACT_APP_API_NEWS_STATSUP` — URL para obtener noticias desde StatsUp (ej.: https://utils.statsup.cl/api/get-json/<id>).
+- `REACT_APP_API_EMAILJS_ENDPOINT` — Endpoint para envío de correos (por defecto usamos `https://api.emailjs.com/api/v1.0/email/send`).
+- `REACT_APP_API_EMAILJS_SERVICE_ID` — Service ID para EmailJS.
+- `REACT_APP_API_EMAILJS_TEMPLATE_ID` — Template ID para EmailJS.
+- `REACT_APP_API_EMAILJS_USER_ID` — User ID para EmailJS.
+- `REACT_APP_API_EMAILJS_ACCESS_TOKEN` — Token de acceso (uso interno en la petición a EmailJS).
+
+Ejemplo de `.env` (no subas este archivo a git):
+
+REACT_APP_API_NEWS_STATSUP=https://utils.statsup.cl/api/get-json/XXXXXXXXX
+REACT_APP_API_EMAILJS_ENDPOINT=https://api.emailjs.com/api/v1.0/email/send
+REACT_APP_API_EMAILJS_SERVICE_ID=service_XXXXXXXX
+REACT_APP_API_EMAILJS_TEMPLATE_ID=template_XXXXXXXX
+REACT_APP_API_EMAILJS_USER_ID=user_XXXXXXXX
+REACT_APP_API_EMAILJS_ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxxx
+
+Cómo usar en el código
+
+Desde React accedes a estas variables mediante `process.env.REACT_APP_*`, por ejemplo:
+
+const endpoint = process.env.REACT_APP_API_EMAILJS_ENDPOINT || 'https://api.emailjs.com/api/v1.0/email/send';
+
+Notas importantes
+
+- Reinicia el servidor de desarrollo (`npm start`) después de añadir o cambiar variables en `.env` para que Create React App las recoja.
+- Nunca subas tus secretos o tokens al repositorio. Usa `.env` local y `gitignore` para evitarlo. Considera usar un gestor de secretos o variables del CI/CD para despliegues en producción.
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**

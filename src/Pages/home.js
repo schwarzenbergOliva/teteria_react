@@ -8,14 +8,47 @@ export default function Home() {
             <Navbar />
             <div id="carouselExampleAutoplaying" className="carousel slide mb-5" data-bs-ride="carousel">
                 <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="/img/carrusel1.jpg" className="d-block w-100" alt="..." style={{ maxHeight: 500 }} />
+                    <div
+                        className="carousel-item active"
+                        style={{
+                            height: 500,
+                            backgroundImage: "url('/img/carrusel1.jpg')",
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                        role="img"
+                        aria-label="Slide 1"
+                    >
+                        <span className="visually-hidden">Slide 1</span>
                     </div>
-                    <div className="carousel-item">
-                        <img src="/img/carrusel2.webp" className="d-block w-100" alt="..." style={{ maxHeight: 500 }} />
+                    <div
+                        className="carousel-item"
+                        style={{
+                            height: 500,
+                            backgroundImage: "url('/img/carrusel2.webp')",
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                        role="img"
+                        aria-label="Slide 2"
+                    >
+                        <span className="visually-hidden">Slide 2</span>
                     </div>
-                    <div className="carousel-item">
-                        <img src="/img/carrusel3.jpg" className="d-block w-100" alt="..." style={{ maxHeight: 500 }} />
+                    <div
+                        className="carousel-item"
+                        style={{
+                            height: 500,
+                            backgroundImage: "url('/img/carrusel3.jpg')",
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                        role="img"
+                        aria-label="Slide 3"
+                    >
+                        <span className="visually-hidden">Slide 3</span>
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -85,12 +118,16 @@ export default function Home() {
                     </div>
 
                     <div className="col-md-6">
-                        <img src="/img/Próximamente1.jpg" alt="" className="img-fluid" />
+                        <img src="/img/Próximamente1.jpg" alt="" className="img-fluid" style={{
+                            height: 424
+                        }}/>
                         <p className="fs-4">Próximamente</p>
                     </div>
 
                     <div className="col-md-6">
-                        <img src="/img/Próximamente2.jpg" alt="" className="img-fluid" />
+                        <img src="/img/Próximamente2.jpg" alt="" className="img-fluid" style={{
+                            height: 424
+                        }} />
                         <p className="fs-4">Próximamente</p>
                     </div>
 
