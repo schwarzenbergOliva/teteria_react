@@ -39,7 +39,7 @@ const Footer = () => {
                             <i className="fas fa-home mr-3" /> Santiago, Chile
                         </p>
                         <p>
-                            <i className="fas fa-envelope mr-3" /> info@tea.com
+                            <i className="fas fa-envelope mr-3" /> Contacto@teteria.cl
                         </p>
                         <p>
                             <i className="fas fa-phone mr-3" /> +56 2 2345 6789
@@ -64,7 +64,7 @@ const Footer = () => {
                         <p>
                             Copyright ©2025 Todos los derechos reservados por:
                             <Link to="/" style={{ textDecoration: 'none' }}>
-                                <strong className="text-warning"> La hora del té spa</strong>
+                                <strong className="text-warning"> La hora del té .spa</strong>
                             </Link>
                         </p>
                     </div>

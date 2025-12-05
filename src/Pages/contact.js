@@ -105,9 +105,9 @@ const Contact = () => {
                         <div className="card">
                             <div className="card-body">
                                 <h5 className="card-title">Oficina Central</h5>
-                                <p><i className="fas fa-map-marker-alt me-2"></i> Santiago, Chile</p>
+                                <p><i className="fas fa-map-marker-alt me-2"></i> Av. macul 6305, Macul,Santiago, Chile</p>
                                 <p><i className="fas fa-phone me-2"></i> +56 2 2345 6789</p>
-                                <p><i className="fas fa-envelope me-2"></i> info@tea.com</p>
+                                <p><i className="fas fa-envelope me-2"></i> Contacto@teteria.cl</p>
                                 <p><i className="fas fa-clock me-2"></i> Lunes a Viernes: 9:00 - 18:00</p>
                             </div>
                         </div>

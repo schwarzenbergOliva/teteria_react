@@ -31,7 +31,7 @@ const News = () => {
 
                 const data = await res.json();
 
-                // Expecting an array of { titulo, imagen, cuerpo }
+                // Expecting array { titulo, imagen, cuerpo }
                 if (Array.isArray(data)) {
                     setItems(data);
                 } else {
